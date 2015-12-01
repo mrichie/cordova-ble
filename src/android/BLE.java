@@ -227,7 +227,7 @@ public class BLE extends CordovaPlugin implements LeScanCallback {
 					// Each device connection has a GattHandler, which handles the events the can happen to the connection.
 					// The implementation of the GattHandler class is found at the end of this file.
 					GattHandler gh = new GattHandler(mNextGattHandle, callbackContext);
-					gh.mGatt = adapter.getRemoteDevice(args.getString(0)).connectGatt(mContext, true, gh);
+					gh.mGatt = adapter.getRemoteDevice(args.getString(0)).connectGatt(mContext, false, gh);
 					// Note that gh.mGatt and this.mGatt are different object and have different types.
 					if(mGatt == null)
 						mGatt = new HashMap<Integer, GattHandler>();
